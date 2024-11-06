@@ -1,0 +1,227 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Amit",
+    email: "employee1@example.com",
+    password: "123",
+    taskNumbers: { active: 1, newTask: 0, completed: 1, failed: 1 },
+    tasks: [
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        taskTitle: "Project Planning",
+        taskDescription: "Plan the initial phases of the project.",
+        taskDate: "2024-11-05",
+        taskCategory: "Planning",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        taskTitle: "Design Mockups",
+        taskDescription: "Create design mockups for the client review.",
+        taskDate: "2024-11-02",
+        taskCategory: "Design",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        taskTitle: "Code Review",
+        taskDescription: "Review the codebase for improvements.",
+        taskDate: "2024-10-28",
+        taskCategory: "Development",
+      },
+    ],
+  },
+  {
+    id: 2,
+    firstName: "Raj",
+    email: "employee2@example.com",
+    password: "123",
+    taskNumbers: { active: 2, newTask: 2, completed: 1, failed: 1 },
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: "Client Meeting",
+        taskDescription: "Discuss project updates with the client.",
+        taskDate: "2024-11-06",
+        taskCategory: "Communication",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        taskTitle: "Documentation",
+        taskDescription: "Complete the project documentation.",
+        taskDate: "2024-10-30",
+        taskCategory: "Documentation",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        taskTitle: "Testing Phase",
+        taskDescription: "Perform tests on the new feature.",
+        taskDate: "2024-11-01",
+        taskCategory: "Testing",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: "Bug Fixes",
+        taskDescription: "Fix bugs reported by QA team.",
+        taskDate: "2024-11-07",
+        taskCategory: "Development",
+      },
+    ],
+  },
+  {
+    id: 3,
+    firstName: "Vikram",
+    email: "employee3@example.com",
+    password: "123",
+    taskNumbers: { active: 1, newTask: 1, completed: 1, failed: 1 },
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        taskTitle: "Database Setup",
+        taskDescription: "Set up the database for the project.",
+        taskDate: "2024-10-25",
+        taskCategory: "Database",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: "Frontend Development",
+        taskDescription: "Start building the frontend components.",
+        taskDate: "2024-11-08",
+        taskCategory: "Development",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        taskTitle: "API Integration",
+        taskDescription: "Integrate APIs into the frontend.",
+        taskDate: "2024-11-02",
+        taskCategory: "Development",
+      },
+    ],
+  },
+  {
+    id: 4,
+    firstName: "Kiran",
+    email: "employee4@example.com",
+    password: "123",
+    taskNumbers: { active: 1, newTask: 1, completed: 1, failed: 1 },
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: "Research",
+        taskDescription: "Conduct research for new project ideas.",
+        taskDate: "2024-11-06",
+        taskCategory: "Research",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        taskTitle: "Training Session",
+        taskDescription: "Attend training on new software tools.",
+        taskDate: "2024-10-30",
+        taskCategory: "Training",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        taskTitle: "Report Generation",
+        taskDescription: "Generate monthly progress reports.",
+        taskDate: "2024-11-01",
+        taskCategory: "Reporting",
+      },
+    ],
+  },
+  {
+    id: 5,
+    firstName: "Priya",
+    email: "employee5@example.com",
+    password: "123",
+    taskNumbers: { active: 1, newTask: 1, completed: 1, failed: 0 },
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        taskTitle: "Setup Workstation",
+        taskDescription: "Configure the workstation for development.",
+        taskDate: "2024-10-20",
+        taskCategory: "Setup",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        taskTitle: "Project Presentation",
+        taskDescription: "Prepare a presentation for project stakeholders.",
+        taskDate: "2024-11-07",
+        taskCategory: "Presentation",
+      },
+      {
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: "Security Audit",
+        taskDescription: "Conduct a security audit of the system.",
+        taskDate: "2024-11-08",
+        taskCategory: "Security",
+      },
+    ],
+  },
+];
+
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setlocalstorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+
+export const getlocalstorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+
+  return { employees, admin };
+};
