@@ -8,15 +8,9 @@ const TaskLists = ({ data }) => {
   return (
     <div
       id="tasklist"
-      className="h-[50%] overflow-x-auto flex items-center  justify-start gap-5 flex-nowrap w-full py-1 mt-16"
+      className="h-[50%] overflow-x-auto flex flex-wrap sm:flex-nowrap items-center justify-start gap-3 sm:gap-5 w-full py-1 mt-8 sm:mt-16"
     >
-      {/* <AcceptTask />
-      <NewTask />
-      <CompleteTask />
-      <FailedTask /> */}
-
       {data.tasks.map((e, index) => {
-        // console.log(e);
         if (e.active) {
           return <AcceptTask key={index} data={e} />;
         }
